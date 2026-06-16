@@ -1,0 +1,64 @@
+[
+  {
+    "label": "/start sends welcome message with main menu",
+    "input": {
+      "type": "command",
+      "text": "/start"
+    },
+    "expect": {
+      "reply": {
+        "text": "👋 Welcome to FlipCounter Bot!\n\nI can flip a coin for you and keep track of how many flips you've made. Use the menu below or type a command:",
+        "reply_markup": {
+          "inline_keyboard": [
+            [
+              { "text": "🪙 Flip", "callback_data": "cmd:flip" },
+              { "text": "📊 Count", "callback_data": "cmd:count" }
+            ],
+            [
+              { "text": "❓ Help", "callback_data": "cmd:help" }
+            ]
+          ]
+        }
+      }
+    }
+  },
+  {
+    "label": "Flip menu button callback routes user to /flip",
+    "input": {
+      "type": "callback_query",
+      "data": "cmd:flip"
+    },
+    "expect": {
+      "answerCallbackQuery": true,
+      "reply": {
+        "text": "Use the /flip command to continue."
+      }
+    }
+  },
+  {
+    "label": "Count menu button callback routes user to /count",
+    "input": {
+      "type": "callback_query",
+      "data": "cmd:count"
+    },
+    "expect": {
+      "answerCallbackQuery": true,
+      "reply": {
+        "text": "Use the /count command to continue."
+      }
+    }
+  },
+  {
+    "label": "Help menu button callback routes user to /help",
+    "input": {
+      "type": "callback_query",
+      "data": "cmd:help"
+    },
+    "expect": {
+      "answerCallbackQuery": true,
+      "reply": {
+        "text": "Use the /help command to continue."
+      }
+    }
+  }
+]
