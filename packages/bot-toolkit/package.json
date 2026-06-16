@@ -1,0 +1,9 @@
+{
+  "name": "@agntdev/bot-toolkit",
+  "version": "1.0.0",
+  "private": true,
+  "main": "src/index.ts",
+  "dependencies": {
+    "grammy": "^1.30.0"
+  }
+}
